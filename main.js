@@ -1,23 +1,32 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let n_vent, venta, cant_ventC1=0, cant_ventC2=0, cant_ventC3=0, monto_c1=0, monto_c2=0, monto_c3=0, monto_global=0;
-        n_vent=Number(prompt("Ingrese el número de ventas realizadas en el día: "));
-        for(let i=1; i<=n_vent; i++){
-            venta=Number(prompt("Ingrese el monto de la venta "+i+": "));
-            if(venta>1000){
-                cant_ventC1++;
-                monto_c1+=venta;
+        let cant, trab, opc, tmp="", aum;
+        cant=Number(prompt("Ingrese la cantidad de trabajadores: ",100));
+        for(let i=1; i<=cant; i++){
+            trab=prompt("Ingrese el nombre del trabajador #: "+i);
+            opc=Number(prompt("Tiempos de servicio: \n    1. 1 - 5 años \n    2. 5 - 10 años \n    3. 10 - 20 años \n    4. 20 años o más \n\tSeleccione una opción: "));
+            switch(opc){
+                case 1:
+                    tmp="1 - 5 años";
+                    aum=100;
+                    break;
+                case 2:
+                    tmp="5 - 10 años";
+                    aum=250;
+                    break;
+                case 3:
+                    tmp="10 - 20 años";
+                    aum=400;
+                    break;
+                case 4:
+                    tmp="20 años o más";
+                    aum=550;
+                    break;
+                default:
+                    alert("Opción incorrecta");
+                    break;
             }
-            else if(venta>500){
-                cant_ventC2++;
-                monto_c2+=venta;
-            }
-            else if (venta<=500){
-                cant_ventC3++;
-                monto_c3+=venta;
-            }
-            monto_global+=venta;
+            alert("▶ Trabajador: "+trab+"\n\t Tiempo de servicio: "+tmp+"\n\t Aumento salarial: $"+aum);
         }
-        alert("▶ Monto global: $"+monto_global+"\n\n▶ N° ventas mayores a $1000: "+cant_ventC1+"\n     \tMonto: $"+monto_c1+"\n▶ N° ventas mayores a $500 y menores a $1000: "+cant_ventC2+"\n     \tMonto: $"+monto_c2+"\n▶ N° ventas menores a $500: "+cant_ventC3+"\n     \tMonto: $"+monto_c3);
     }, 500);
 });
