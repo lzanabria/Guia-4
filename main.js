@@ -1,18 +1,16 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let est, cal, cal_acum=0, prom, mayor=0, menor=10;
-        est=Number(prompt("Ingrese la cantidad de estudiantes: "));
-        for(let i=1; i<=est; i++){
-            cal=Number(prompt("Ingrese la calificación (1 - 10): "));
-            cal_acum+=cal;
-            if(cal>=mayor){
-                mayor=cal;
+        let mens=0, total=0;
+        for(let i=1; i<=20; i++) {
+            if(i==1) {
+                mens=10;
             }
-            if(cal<=menor){
-                menor=cal;
+            else {
+                mens*=2;
             }
+            alert("El pago del mes "+i+" es de: $"+mens);
+            total+=mens;
         }
-        prom=cal_acum/est;
-        alert("▶ Estudiantes encuestados: "+est+"\n\t Promedio de calificaciones: "+prom+"\n\t Calificación más alta: "+mayor+"\n\t Calificación más baja: "+menor);
+        alert("El pago total que pagó es de: $"+total);
     }, 500);
 });
