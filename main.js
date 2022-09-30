@@ -1,12 +1,16 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let prec, uds, subtot, val_iva, total;
-        const iva=16;
-        prec=Number(prompt("Ingrese el precio del producto: "));
-        uds=Number(prompt("Ingrese la cantidad de unidades: "));
-        subtot=prec*uds;
-        val_iva=(subtot*iva)/100;
-        total=subtot+val_iva;
-        alert("\tPrecio por unidad: $"+prec+"\n\tUnidades: "+uds+"\n\tSubtotal: $"+subtot+"\n\tIVA: "+iva+"%"+"\n\tValor del IVA: $"+val_iva+"\n\tPago total: $"+total);
+        let n, result1=0, result2=0;
+        n=Number(prompt("Ingrese un número positivo: "));
+        if (n>0) {
+            for(let i=1; i<=n; i++){
+                result1+=i**2;
+                result2+=i**i;
+            }
+            alert("\tEl resultado de la serie 1 es: "+result1+"\n\tEl resultado de la serie 2 es: "+result2);
+        }
+        else {
+            alert("El número ingresado no es positivo");
+        }
     }, 500);
 });
