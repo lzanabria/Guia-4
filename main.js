@@ -1,9 +1,14 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let ang_rad, conv, sen;
-        ang_rad=Number(prompt("Ingrese el valor del ángulo en radianes: "));
-        conv=(ang_rad*180)/Math.PI;
-        sen=Math.sin(ang_rad);
-        alert("▶ Ángulo: "+ang_rad+" radianes. \n\t Coversión a grados: "+conv+"\n\t El seno del ángulo es: "+sen);
+        let cant, nums, suma=0, resta=0, multi=1, divi=1;
+        cant=Number(prompt("Ingrese la cantidad de números: "));
+        for(let i=1; i<=cant; i++){
+            nums=Number(prompt("Ingrese el valor del número "+(i)+": "));
+            suma+=nums;
+            resta-=nums;
+            multi*=nums;
+            divi/=nums;
+        }
+        alert("\t Suma: "+suma+"\n\t Resta: "+resta+"\n\t Multiplicación: "+multi+"\n\t División: "+divi);
     }, 500);
 });
